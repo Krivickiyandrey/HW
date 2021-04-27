@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+</head>
+<body style="background-color: dodgerblue;">
+<h1 align="center"> Введите дату </h1>
+<div class="container">
+    <div class="row">
+        <form method="POST" action="http://127.0.0.1:8000/dateshow/show">  {% csrf_token %}
+            <div class="form-group">
+                <label for="dataRN">Дата:</label>
+                <input id="dataRN" class="form-control" type="text" name="dataRN" placeholder="Введите дату">
+            </div>
+            <p>{{msg}}</p>
+
+            <button type="submit" class="btn btn-info">OK</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
