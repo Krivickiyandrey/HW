@@ -1,5 +1,4 @@
 """src URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
@@ -16,13 +15,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from home.views import index, query, dateshow, show
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(r'', index, name='index'),
-    # path(r'home/', include('home.urls')),
-    path(r'result/', include('home.urls')),
-    path(r'dateshow/', dateshow, name='dateshow'),
-    path(r'dateshow/show', show, name='show')
+    path(r'home/', include('home.urls')),
+    path(r'aviasales/', include('aviasales.urls'))
 ]
